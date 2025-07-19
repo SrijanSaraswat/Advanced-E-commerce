@@ -3,6 +3,16 @@
 
 A full-stack e-commerce application built using Django REST Framework for the backend and React with Redux for the frontend. It includes authentication, product catalog management, cart functionality, and order processing.
 
+## Tech Stack Used
+
+<img src="https://img.shields.io/badge/-Django%20REST%20Framework-grey?style=flat&logo=django&logoColor=white"/>
+<img src="https://img.shields.io/badge/-PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white"/>
+<img src="https://img.shields.io/badge/-React-20232A?style=flat&logo=react&logoColor=61DAFB"/>
+<img src="https://img.shields.io/badge/-Redux-764ABC?style=flat&logo=redux&logoColor=white"/>
+<img src="https://img.shields.io/badge/-Material--UI-0081CB?style=flat&logo=mui&logoColor=white"/>
+<img src="https://img.shields.io/badge/-Redis-DC382D?style=flat&logo=redis&logoColor=white"/>
+<img src="https://img.shields.io/badge/-Axios-5A29E4?style=flat&logo=axios&logoColor=white"/>
+
 ## Features
 
 - User authentication with JWT
@@ -14,11 +24,13 @@ A full-stack e-commerce application built using Django REST Framework for the ba
 
 ## Prerequisites
 
-- Python 3.9+
-- Node.js 16+
-- PostgreSQL
-- Redis (optional but recommended for caching)
-- Git
+Make sure you have the following installed on your system:
+
+- [Python 3.9+](https://www.python.org/downloads/)
+- [Node.js 16+](https://nodejs.org/)
+- [PostgreSQL](https://www.postgresql.org/download/)
+- [Redis](https://redis.io/docs/getting-started/installation/)
+- [Git](https://git-scm.com/downloads)
 
 ## Project Structure
 
