@@ -12,7 +12,6 @@ A full-stack e-commerce application built using Django REST Framework for the ba
   <img src="https://img.shields.io/badge/-Redux-764ABC?style=flat&logo=redux&logoColor=white"/>
   <img src="https://img.shields.io/badge/-Material--UI-0081CB?style=flat&logo=mui&logoColor=white"/>
   <img src="https://img.shields.io/badge/-Redis-DC382D?style=flat&logo=redis&logoColor=white"/>
-  <img src="https://img.shields.io/badge/-Axios-5A29E4?style=flat&logo=axios&logoColor=white"/>
 </p>
 
 
