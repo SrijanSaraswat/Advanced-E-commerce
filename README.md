@@ -1,7 +1,7 @@
 
 # E-Commerce Platform (Django + React)
 
-A full-stack e-commerce application built using Django REST Framework for the backend and React with Redux for the frontend. It includes authentication, product catalog management, cart functionality, and order processing.
+A full-stack e-commerce application built using Django REST Framework for the backend and React with Redux for the frontend. It includes authentication, product catalog management, cart functionality, real-time notifications, caching, and order processing.
 
 ## Tech Stack Used
 
@@ -12,21 +12,21 @@ A full-stack e-commerce application built using Django REST Framework for the ba
   <img src="https://img.shields.io/badge/-Redux-764ABC?style=flat&logo=redux&logoColor=white"/>
   <img src="https://img.shields.io/badge/-Material--UI-0081CB?style=flat&logo=mui&logoColor=white"/>
   <img src="https://img.shields.io/badge/-Redis-DC382D?style=flat&logo=redis&logoColor=white"/>
+  <img src="https://img.shields.io/badge/-Axios-5A29E4?style=flat&logo=axios&logoColor=white"/>
 </p>
-
 
 ## Features
 
-- User authentication with JWT
-- Product catalog with category filtering
+- JWT authentication for users
+- User registration, login, and profile management
+- Product catalog with filtering and pagination
+- Admin-only product and category management
 - Shopping cart and order placement
-- Admin dashboard for managing products and orders
-- Redis caching support
-- Responsive frontend with React and Material-UI
+- Order status tracking: Pending → Shipped → Delivered
+- Real-time order status updates via WebSockets (Django Channels)
+- Redis-based caching for optimized performance
 
 ## Prerequisites
-
-Make sure you have the following installed on your system:
 
 - [Python 3.9+](https://www.python.org/downloads/)
 - [Node.js 16+](https://nodejs.org/)
@@ -57,42 +57,24 @@ ecommerce-project/
 ### 1. Backend Setup (Django)
 
 ```powershell
-# Navigate to the backend directory
 cd ecommerce-project/ecommerce
-
-# Create and activate virtual environment (Windows)
 python -m venv venv
 venv\Scripts\activate
-
-# Install dependencies
 pip install -r requirements.txt
-
-# Set up environment variables
 copy .env.example .env
 notepad .env
-
-# Apply migrations and create superuser
 python manage.py migrate
 python manage.py createsuperuser
-
-# Start the development server
 python manage.py runserver
 ```
 
 ### 2. Frontend Setup (React)
 
 ```powershell
-# Navigate to the React frontend directory
 cd ecommerce-frontend
-
-# Install dependencies
 npm install
-
-# Create and configure environment variables
 copy .env.example .env
 notepad .env
-
-# Start the frontend development server
 npm start
 ```
 
@@ -119,21 +101,15 @@ REACT_APP_API_URL=http://localhost:8000/api
 
 ## Running the Project
 
-1. Start the backend server:
-
 ```powershell
+# Start backend
 cd ecommerce-project/ecommerce
 python manage.py runserver
-```
 
-2. Start the frontend server:
-
-```powershell
+# Start frontend
 cd ecommerce-project/ecommerce/ecommerce-frontend
 npm start
 ```
-
-3. Access the application at:
 
 - Frontend: http://localhost:3000
 - Admin Panel: http://localhost:8000/admin
@@ -144,8 +120,8 @@ npm start
 ### Backend
 
 - Set `DEBUG=False` in `.env`
-- Use Gunicorn with Nginx or host on services like PythonAnywhere or Render
-- Run `python manage.py collectstatic` before deploying
+- Use Gunicorn with Nginx or host on Render/VPS
+- Run `python manage.py collectstatic`
 
 ### Frontend
 
@@ -153,13 +129,13 @@ npm start
 npm run build
 ```
 
-- Deploy the contents of the `build/` folder to a static host like Netlify or Vercel
+- Deploy the `build/` directory to Vercel or Netlify
 
 ## Troubleshooting
 
-1. Ensure PostgreSQL and Redis are running correctly.
-2. Double-check environment variables in both backend and frontend `.env` files.
-3. Run migrations again if database changes are made.
+- Ensure PostgreSQL and Redis services are running
+- Validate environment variables and ports
+- Rerun migrations if DB schema changes
 
 ## License
 
