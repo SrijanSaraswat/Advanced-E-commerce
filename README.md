@@ -15,6 +15,7 @@ A full-stack e-commerce application built using Django REST Framework for the ba
   <img src="https://img.shields.io/badge/-Axios-5A29E4?style=flat&logo=axios&logoColor=white"/>
 </p>
 
+
 ## Features
 
 - User authentication with JWT
