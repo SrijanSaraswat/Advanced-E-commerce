@@ -1,0 +1,35 @@
+# Navigate to your project root
+cd D:\Django\ecommerce-project\ecommerce
+
+# Create .gitignore file with standard Django ignores
+@"
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Virtual environment
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Node/npm (if you have frontend)
+node_modules/
+npm-debug.log*
+
+# Database files
+*.db
+*.sqlite
+"@ | Out-File -Encoding utf8 .gitignore
