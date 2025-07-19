@@ -3,6 +3,12 @@ from pathlib import Path
 from datetime import timedelta
 import environ
 
+from dotenv import load_dotenv
+import os
+
+# Load environment variables
+load_dotenv()
+
 # Initialize environment variables
 env = environ.Env()
 environ.Env.read_env()
@@ -33,6 +39,8 @@ INSTALLED_APPS = [
     'users',
     'products',
     'orders',
+    'django_filters',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -130,17 +138,19 @@ SIMPLE_JWT = {
 
 # CORS
 CORS_ALLOW_ALL_ORIGINS = True
-
-# Redis Cache
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": env('REDIS_URL'),
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-        }
-    }
-}
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # React dev server
+]
+# # Redis Cache
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django_redis.cache.RedisCache",
+#         "LOCATION": env('REDIS_URL'),
+#         "OPTIONS": {
+#             "CLIENT_CLASS": "django_redis.client.DefaultClient",
+#         }
+#     }
+# }
 
 # Cache timeout
 CACHE_TTL = 60 * 60  # 1 hour
